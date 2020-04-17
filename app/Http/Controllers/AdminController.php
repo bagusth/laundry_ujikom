@@ -54,11 +54,11 @@ class AdminController extends Controller
 
         if ($status){
             
-            return redirect('admin/member/index_member');
+            return redirect('admin/member/index_member')->with('success', 'Member has successfully added');
 
         } else {
 
-            return redirect('admin/member/tambah_pelanggan');
+            return redirect('admin/member/tambah_pelanggan')->with('error', 'Oops, Something went wrong');
 
         }
 
@@ -91,11 +91,11 @@ class AdminController extends Controller
 
         if ($status){
             
-            return redirect('admin/member/index_member');
+            return redirect('admin/member/index_member')->with('success', 'Member has been successfully changed');
 
         } else {
 
-            return redirect('admin/member/editPelanggan');
+            return redirect('admin/member/editPelanggan')->with('error', 'Aw, there was something wrong boi');
 
         }
     }
@@ -107,7 +107,13 @@ class AdminController extends Controller
 
         $status = $data->delete();
 
-        return redirect('admin/member/index_member');
+        if($status){
+
+            return redirect('admin/member/index_member')->with('success', 'U did it, member has been successfully deleted');
+
+        }else{
+            return redirect('admin/member/index_member')->with('error', 'Oh my, the data has not deleted yet');
+        }
 
             
     }
@@ -168,14 +174,12 @@ class AdminController extends Controller
         $this->validate($request, [
             'nama'=>'required',
             'alamat'=>'required',
-            'jenis_kelamin'=>'required',
             'tlp'=>'required'
         ]);
 
         $data = \App\Outlet::find($id_outlet);
         $data->nama = $request->nama;
         $data->alamat = $request->alamat;
-        $data->jenis_kelamin = $request->jenis_kelamin;
         $data->tlp = $request->tlp;
         
         $status = $data->update();
@@ -247,7 +251,8 @@ class AdminController extends Controller
     public function viewEditPaket(Request $request, $id_paket)
     {
         $data['paket']= \App\Paket::findOrFail($id_paket);
-        return view('admin.indexPaket', $data);
+        $data['outlet']= \App\Outlet::get();
+        return view('admin.editPaket', $data);
     }
 
     public function editPaket(Request $request, $id_paket)
@@ -259,7 +264,7 @@ class AdminController extends Controller
             'harga'=>'required'
         ]);
 
-        $data = \App\Paket::findOrFail( $id_paket );
+        $data = \App\Paket::find($id_paket);
         $data->id_outlet = $request->id_outlet;
         $data->jenis = $request->jenis;
         $data->nama_paket = $request->nama_paket;
@@ -324,10 +329,9 @@ class AdminController extends Controller
         $data->id_outlet = $request->id_outlet;
         $data->kode_invoice = $request->kode_invoice;
         $data->id_member = $request->id_member;
-        $date = date ("Y-m-d");
-        $data->tgl = $date; 
-        $data->batas_waktu = $date;
-        $data->tgl_bayar = $date;
+        $data->tgl = $request->tgl; 
+        $data->batas_waktu = $request->batas_waktu;
+        $data->tgl_bayar = $request->tgl_bayar;
         $data->biaya_tambahan = $request->biaya_tambahan;
         $data->diskon = $request->diskon;
         $data->pajak = $request->pajak;
@@ -344,6 +348,63 @@ class AdminController extends Controller
         } else {
 
             return redirect('admin/transaksi/tambahTransaksi');
+
+        }
+    }
+
+    
+    public function viewEditTransaksi(Request $request, $id_transaksi)
+    {
+        $data['transaksi']= \App\Transaksi::findOrFail($id_transaksi);    
+        $data['member']= \App\Member::get();
+        $data['outlet']= \App\Outlet::get();
+        $data['user']= \App\Users::get();
+        return view('admin.editTransaksi', $data);
+    }
+
+
+    public function editTransaksi(Request $request, $id_transaksi)
+    {
+        $this->validate($request, [
+            'id_outlet'=>'required',
+            'kode_invoice'=>'required',
+            'id_member'=>'required',
+            'tgl'=>'required',
+            'batas_waktu'=>'required',
+            'tgl_bayar'=>'required',
+            'biaya_tambahan'=>'required',
+            'diskon'=>'required',
+            'pajak'=>'required',
+            'diskon'=>'required',
+            'pajak'=>'required',
+            'status'=>'required',
+            'dibayar'=>'required',
+            'id_user'=>'required'
+        ]);
+   
+        $data = \App\Transaksi::find($id_transaksi);
+        $data->id_outlet = $request->id_outlet;
+        $data->kode_invoice = $request->kode_invoice;
+        $data->id_member = $request->id_member;
+        $data->tgl = $request->tgl; 
+        $data->batas_waktu = $request->batas_waktu;
+        $data->tgl_bayar = $request->tgl_bayar;
+        $data->biaya_tambahan = $request->biaya_tambahan;
+        $data->diskon = $request->diskon;
+        $data->pajak = $request->pajak;
+        $data->status = $request->status;
+        $data->dibayar = $request->dibayar;
+        $data->id_user =$request->id_user;
+        
+        $status = $data->update();
+
+        if ($status){
+            
+            return redirect('admin/transaksi/indexTransaksi');
+
+        } else {
+
+            return redirect('admin/transaksi/editTransaksi');
 
         }
     }

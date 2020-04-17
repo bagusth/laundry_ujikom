@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!-- Cek -->
-    @if ($errors->any())
+            @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
                         @foreach ($errors->all() as $error)
@@ -18,9 +18,6 @@
     <form action="{{url('admin/paket',@$paket->id_paket)}}" method="post">
 
         @csrf
-        @if(!empty($paket))
-            @method('PATCH')
-        @endif
 
     <div class="container-fluid ml-1 mt-5">
         <div class="card">
@@ -45,7 +42,7 @@
                                         
                                         {{old('id_outlet')}}
 
-                                        @if(@paket->id_outlet == $o->id_outlet)
+                                        @if(@$paket->id_outlet == $o->id_outlet)
                                             selected
                                         @endif    
                                     

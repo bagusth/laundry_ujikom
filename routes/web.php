@@ -38,7 +38,7 @@ Route::get('admin/outlet/indexOutlet', 'AdminController@viewOutlet');
 Route::get('admin/outlet/tambahOutlet','AdminController@viewtambahOutlet');
 Route::post('admin/outlet', 'AdminController@tambahOutlet');
 Route::get('admin/outlet/editOutlet/{id_outlet}', 'AdminController@viewEditOutlet');
-Route::patch('admin/outlet/{id_outlet}', 'AdminController@editOutlet');
+Route::post('admin/outlet/{id_outlet}', 'AdminController@editOutlet');
 Route::get('admin/delete/outlet{id_outlet}', 'AdminController@deleteOutlet');
 
 //Paket
@@ -54,7 +54,7 @@ Route::get('admin/transaksi/indexTransaksi', 'AdminController@viewTransaksi');
 Route::get('admin/transaksi/tambahTransaksi', 'AdminController@viewtambahTransaksi');
 Route::post('admin/transaksi', 'AdminController@tambahTransaksi');
 Route::get('admin/transaksi/editTransaksi/{id_transaksi}', 'AdminController@viewEditTransaksi');
-Route::patch('admin/transaksi/editTransaksi', 'AdminController@editTransaksi');
+Route::patch('admin/transaksi/{id_transaksi}', 'AdminController@editTransaksi');
 Route::get('admin/delete/transaksi{id_transaksi}', 'AdminController@deleteTransaksi');
 
 

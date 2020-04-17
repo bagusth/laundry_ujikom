@@ -6,6 +6,9 @@
 
         <title>Laravel</title>
 
+        <!--Bootstrap CSS-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
@@ -68,33 +71,19 @@
                 text-align:center;
                 }
 
-            .links{
-                font-size:13px; 
-            }    
-
         </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
                 <div class="top-right links get">
-                        <a href="{{ url('login') }}">Get Started --></a>
+                        <a href="{{ url('login') }}" class="btn btn-alt">Get Started</a>
                 </div>
 
 
             <div class="content">
     
                 <div class="title m-b-md">
-                    LAUNDRY
-                </div>
-
-           
-
-                <div class="links">
-                    <a href="">Males nyeseuh ???</a>
-                </div>
-                <br>
-                <div class="links">
-                <a href="">Laundry-in aja!</a>
+                    GOOD LAUNDRY
                 </div>
             
             </div>

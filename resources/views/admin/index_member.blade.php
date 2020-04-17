@@ -2,6 +2,18 @@
 
 @section('title', 'Member')
 
+			@if(\Session::has('error'))
+                <div class="alert alert-danger">
+                    <div>{{Session::get('error')}}</div>
+                </div>
+            @endif
+            @if(\Session::has('success'))
+                <div class="alert alert-success">
+                    <div>{{Session::get('success')}}</div>
+                </div>
+            @endif  
+
+
 @section('header')
 
 			<h1 id="wel" class="ml-3 mt-2 mb-4 display-5">Member Page</h1>
@@ -17,7 +29,7 @@
                     margin-bottom:5px;
                 }
            </style> 
-
+		   
 	<body>
 		<div card="card-body">
 			<div class= "container-fluid mt-2">

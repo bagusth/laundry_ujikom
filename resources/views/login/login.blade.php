@@ -75,6 +75,9 @@
                     box-shadow: 100px;
                     outline: 10px;
                 }
+                .register{
+                    font-size: 12px;
+                }
             </style>
             <!-- Remove This Before You Start -->
             @if(\Session::has('error'))
@@ -98,24 +101,29 @@
                         </div>
                         <div class="d-flex justify-content-center form_container">
                             <form action="{{ url('loginPost') }}" method="post">
-                                {{ csrf_field() }}
-                                <div class="input-group mb-3">
+                                @csrf
+                                <div class="input-group mt-3">
                                     <div class="input-group-append">
                                         <span class="input-group-text"><i class="fas fa-user"></i></span>
                                     </div>
                                     <label for="username"></label>
                                     <input type="username" name="username" id="username" class="form-control input_user" value="" placeholder="username">
                                 </div>
-                                <div class="input-group mb-2">
+                                <div class="input-group mt-3">
                                     <div class="input-group-append">
                                         <span class="input-group-text"><i class="fas fa-key"></i></span>
                                     </div>
                                     <label for="alamat"></label>
                                     <input type="password" name="password" class="form-control input_pass" id="password"   value="" placeholder="password">
                                 </div>
-                                    <div class="d-flex justify-content-center mt-3 login_container">
-                            <button type="submit" name="button" class="btn login_btn">Login</button>
-                        </div>
+                                <div class="d-flex justify-content-center mt-3 login_container">
+                                    <button type="submit" name="button" class="btn login_btn">Login</button>
+                                </div>
+                                <div class="register justify-content-center login_container">
+                                    <label>Wanna make an account ?</label>
+                                    <label><a href="{{url('register')}}">Register here</a></label>
+                                </div>
+                                
                             </form>
                         </div>
                 

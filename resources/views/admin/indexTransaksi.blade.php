@@ -26,6 +26,7 @@
 									<th scope="th-sm">Id</th>
                                     <th scope="th-sm">Id Outlet</th>
 									<th scope="th-sm">Kode Invoice</th>
+									<th scope="th-sm">Id Member</th>
 									<th scope="th-sm">Tanggal</th>
                                     <th scope="th-sm">Batas Waktu</th>
                                     <th scope="th-sm">Tanggal Bayar</th>
@@ -41,9 +42,10 @@
 							@foreach($transaksi as $row)
 							<tbody>
 								<tr>
-									<td>{{$row->id}}</td>
+									<td>{{$row->id_transaksi}}</td>
                                     <td>{{$row->id_outlet}}</td>
                                     <td>{{$row->kode_invoice}}</td>
+									<td>{{$row->id_member}}</td>
 									<td>{{$row->tgl}}</td>
                                     <td>{{$row->batas_waktu}}</td>
                                     <td>{{$row->tgl_bayar}}</td>
@@ -54,7 +56,7 @@
                                     <td>{{$row->dibayar}}</td>
                                     <td>{{$row->id_user}}</td>
 									<td>
-											<a class="badge badge-warning" href="{{url('admin/transaksi/editPaket/'.$row->id_transaksi)}}">Edit</a>
+											<a class="badge badge-warning" href="{{url('admin/transaksi/editTransaksi/'.$row->id_transaksi)}}">Edit</a>
 
                                             <a class="badge badge-danger" href="{{url('admin/delete/transaksi'.$row->id_transaksi)}}">Delete</a>
 										</td>
