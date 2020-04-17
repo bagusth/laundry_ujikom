@@ -12,6 +12,13 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
+        <!--Font Awesome-->
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!--Material Icons-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
         <!-- Styles -->
         <style>
             html, body {
@@ -70,13 +77,16 @@
                 border-radius: 2rem;  
                 text-align:center;
                 }
+            .btn-alt{
+                background-color:#000;
+            }    
 
         </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
                 <div class="top-right links get">
-                        <a href="{{ url('login') }}" class="btn btn-alt">Get Started</a>
+                        <a href="{{ url('login') }}" class="btn btn-alt">Get Started&nbsp;<i class="fa fa-angle-right"></i></a>
                 </div>
 
 

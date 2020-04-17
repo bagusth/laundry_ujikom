@@ -34,9 +34,7 @@
 		<div card="card-body">
 			<div class= "container-fluid mt-2">
 				<div id= "container">
-                    <div class="list-item-group">
-                    <a href="{{url('admin/member/tambah_pelanggan')}}" class="btn btn-primary mb-4 mr-4" id="ih"> Tambah Pelanggan </a>
-                    </div><br><br>
+                    <a href="{{url('admin/member/tambah_pelanggan')}}" class="btn btn-primary mb-4 mr-4" id="ih"><i class="material-icons">control_point</i>&nbsp;Tambah Pelanggan</a><br><br>
 						<table id=dtBasicExample class="table table-striped table-bordered " cellspacing="0" width="60%">
 								<thead class="thead-dark">
 									<tr>
@@ -57,9 +55,9 @@
 										<td>{{$row->jenis_kelamin}}</td>
 										<td>{{$row->tlp}}</td>
 										<td>
-											<a class="badge badge-warning" href="{{url('admin/member/editPelanggan/'.$row->id_member)}}">Edit</a>
+											<a class="badge badge-warning" href="{{url('admin/member/editPelanggan/'.$row->id_member)}}"><i class="fa fa-edit"></i>&nbsp;Edit</a>
 
-                                            <a class="badge badge-danger" href="{{url('admin/delete/member'.$row->id_member)}}">Delete</a>
+                                            <a class="badge badge-danger" href="{{url('admin/delete/member'.$row->id_member)}}"><i class="fa fa-trash"></i>&nbsp;Delete</a>
 										</td>
 									</tr>
 								</tbody>
