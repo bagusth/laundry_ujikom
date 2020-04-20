@@ -22,6 +22,10 @@ Route::get('logout','LoginController@logout');
 Route::get('login','LoginController@viewLogin');
 Route::post('loginPost','LoginController@loginPost');
 
+//Register
+Route::get('register', 'AdminController@register');
+Route::post('registerPost', 'AdminController@registerPost');
+
 //Admin
 Route::get('admin/home','AdminController@index');
 
@@ -62,12 +66,21 @@ Route::get('admin/delete/transaksi{id_transaksi}', 'AdminController@deleteTransa
 Route::get('kasir/home','kasirController@index');
 
 //Member
-Route::get('kasir/member/indexPelanggan', 'kasirController@viewPelanggan');
+Route::get('kasir/member/indexMember', 'kasirController@viewPelanggan');
 Route::get('kasir/member/tambahPelanggan', 'kasirController@viewTambahPelanggan');
 Route::post('kasir/member', 'kasirController@tambahPelangganPost');
 Route::get('kasir/member/editPelanggan/{id}', 'kasirController@viewEditPelanggan');
 Route::patch('kasir/member/{id}', 'kasirController@editPelanggan');
-Route::delete('kasir/delete/member{id}', 'kasirController@deletePelanggan');
+Route::get('kasir/delete/member{id}', 'kasirController@deletePelanggan');
+
+//Transaksi
+Route::get('kasir/transaksi/indexTransaksi', 'kasirController@viewTransaksi');
+Route::get('kasir/transaksi/tambahTransaksi', 'kasirController@viewtambahTransaksi');
+Route::post('kasir/transaksi', 'kasirController@tambahTransaksi');
+Route::get('kasir/transaksi/editTransaksi/{id_transaksi}', 'kasirController@viewEditTransaksi');
+Route::patch('kasir/transaksi/{id_transaksi}', 'kasirController@editTransaksi');
+Route::get('kasir/delete/transaksi{id_transaksi}', 'kasirController@deleteTransaksi');
+
 
 //Owner
 Route::get('owner/home','OwnerController@index');

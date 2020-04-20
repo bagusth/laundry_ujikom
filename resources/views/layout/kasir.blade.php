@@ -90,6 +90,11 @@
 </head>
 
         <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="{{url('kasir/home')}}"><i class="fa fa-home"></i>&nbsp;Dashboard</a>
+            <a href="{{url('kasir/member/indexMember')}}"><i class="fa fa-user"></i>&nbsp;Registrasi Member</a>
+            <a href="{{url('kasir/transaksi/indexTransaksi')}}"><i class="fa fa-credit-card"></i>&nbsp;Transaksi</a>
+            <br><br><br><br><br><br><br><br><br><br><br>
             <a href="{{url('logout')}}"><i class="fa fa-power-off"></i>&nbsp;Logout</a>   
         </div>
 
@@ -100,12 +105,12 @@
                     <div class="container-fluid">
     
                         <div class="jumbotron bg-alt">
-							<h1 id="wel" class="ml-3 mt-2 mb-4 display-5">Yo, {{Session::get('nama')}}</h1>	
+                            @yield('header')
                         </div>
                     </div>
                 </div>          
 
-                              
+                              @yield('content')   
         </div>        
         
     <script>

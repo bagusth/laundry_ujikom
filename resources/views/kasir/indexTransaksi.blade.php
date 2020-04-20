@@ -1,7 +1,6 @@
-@extends('layout.app')
+@extends('layout.kasir')
 
-
-			@if(\Session::has('error'))
+            @if(\Session::has('error'))
                 <div class="alert alert-danger">
                     <div>{{Session::get('error')}}</div>
                 </div>
@@ -28,7 +27,7 @@
 			</style>	
 		<div class="card-body">
 			<div class="list-item-group">
-    	       <a href="{{url('admin/transaksi/tambahTransaksi')}}" class="btn btn-primary mb-4 mr-3" id="ih"><i class="fas fa-cart-plus"></i>&nbsp;Tambah Transaksi</a>
+    	       <a href="{{url('kasir/transaksi/tambahTransaksi')}}" class="btn btn-primary mb-4 mr-3" id="ih"><i class="fas fa-cart-plus"></i>&nbsp;Tambah Transaksi</a>
             </div><br><br>	
 			<div class= "container-fluid mt-2">
 				<div id= "container">
@@ -68,9 +67,9 @@
                                     <td>{{$row->dibayar}}</td>
                                     <td>{{$row->id_user}}</td>
 									<td>
-											<a class="badge badge-warning" href="{{url('admin/transaksi/editTransaksi/'.$row->id_transaksi)}}"><i class="fa fa-edit"></i>&nbsp;Edit</a>
+											<a class="badge badge-warning" href="{{url('kasir/transaksi/editTransaksi/'.$row->id_transaksi)}}"><i class="fa fa-edit"></i>&nbsp;Edit</a>
 
-                                            <a class="badge badge-danger" href="{{url('admin/delete/transaksi'.$row->id_transaksi)}}"><i class="fa fa-trash"></i>&nbsp;Delete</a>
+                                            <a class="badge badge-danger" href="{{url('kasir/delete/transaksi'.$row->id_transaksi)}}"><i class="fa fa-trash"></i>&nbsp;Delete</a>
 										</td>
 								</tr>
 							</tbody>

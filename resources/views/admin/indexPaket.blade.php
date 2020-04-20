@@ -1,5 +1,18 @@
 @extends('layout.app')
 
+
+
+			@if(\Session::has('error'))
+                <div class="alert alert-danger">
+                    <div>{{Session::get('error')}}</div>
+                </div>
+            @endif
+            @if(\Session::has('success'))
+                <div class="alert alert-success">
+                    <div>{{Session::get('success')}}</div>
+                </div>
+            @endif 
+
 @section('header')
 
     <h1 id="wel" class="mt-2 ml-3 mb-4 display-5">Packet/Product Page</h1>
@@ -16,7 +29,7 @@
 			</style>	
 		<div class="card-body">
 			<div class="list-item-group">
-    	       <a href="{{url('admin/paket/tambahPaket')}}" class="btn btn-primary mb-4 mr-3" id="ih"> Tambah Paket </a>
+    	       <a href="{{url('admin/paket/tambahPaket')}}" class="btn btn-primary mb-4 mr-3" id="ih"><i class="fa fa-boxes"></i>&nbsp;Tambah Paket </a>
             </div><br><br>	
 			<div class= "container-fluid mt-2">
 				<div id= "container">
@@ -40,9 +53,9 @@
 									<td>{{$row->nama_paket}}</td>
 									<td>{{$row->harga}}</td>
 									<td>
-											<a class="badge badge-warning" href="{{url('admin/paket/editPaket/'.$row->id_paket)}}">Edit</a>
+											<a class="badge badge-warning" href="{{url('admin/paket/editPaket/'.$row->id_paket)}}"><i class="fa fa-edit"></i>Edit</a>
 
-                                            <a class="badge badge-danger" href="{{url('admin/delete/paket'.$row->id_paket)}}">Delete</a>
+                                            <a class="badge badge-danger" href="{{url('admin/delete/paket'.$row->id_paket)}}"><i class="fa fa-trash"></i>&nbsp;Delete</a>
 										</td>
 								</tr>
 							</tbody>

@@ -20,7 +20,7 @@
                     background: #7b32a8;
                 }
                 .user_card {
-                    height: 400px;
+                    height: 500px;
                     width: 350px;
                     margin-top: auto;
                     margin-bottom: auto;
@@ -53,7 +53,7 @@
                     border: 2px solid white;
                 }
                 .form_container {
-                    margin-top: 50px;
+                    margin-top: 70px;
                 }
                 .login_btn {
                     width: 100%;
@@ -105,8 +105,15 @@
                             </div>
                         </div>
                         <div class="d-flex justify-content-center form_container">
-                            <form action="{{ url('loginPost') }}" method="post">
+                            <form action="{{ url('registerPost') }}" method="post">
                                 @csrf
+                                <div class="input-group mt-3">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-credit-card"></i></span>
+                                    </div>
+                                    <label for="nama"></label>
+                                    <input type="text" name="nama" id="nama" class="form-control input_user" value="" placeholder="name">
+                                </div>
                                 <div class="input-group mt-3">
                                     <div class="input-group-append">
                                         <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -116,19 +123,38 @@
                                 </div>
                                 <div class="input-group mt-3">
                                     <div class="input-group-append">
-                                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-lock"></i></span>
                                     </div>
-                                    <label for="alamat"></label>
+                                    <label for="password"></label>
                                     <input type="password" name="password" class="form-control input_pass" id="password"   value="" placeholder="password">
                                 </div>
+                                <div class="input-group mt-3">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                    </div>
+                                    <label for="id_outlet"></label>
+                                    <input type="text" name="id_outlet" id="id_outlet" class="form-control input_user" value="1" placeholder="id_outlet" readonly>
+                                </div>
+                                <div class="input-group dropdown mt-3">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-plus"></i></span>
+                                    </div>
+                                    <label for="role"></label>
+                                    <select name="role" id="role" class="form-control input_user">
+                                        <option value="">Select Your Role</option>
+                                        <option value="admin">Admin</option>
+                                        <option value="kasir">Kasir</option>
+                                        <option value="owner">Owner</option>
+                                    </select>
+                                </div>
                                 <div class="d-flex justify-content-center mt-3 login_container">
-                                    <button type="submit" name="button" class="btn login_btn">Login</button>
+                                    <button type="submit" name="button" class="btn login_btn">Register</button>
                                 </div>
-                                <div class="register justify-content-center login_container">
-                                    <label>Wanna make an account ?</label>
-                                    <label><a href="{{url('register')}}">Register here</a></label>
+                                <div class="register justify-content-center ml-4 login_container">
+                                    <label>Have an account ? </label>
+                                    <label><a href="{{url('login')}}"> Login</a></label>
                                 </div>
-                                
+
                             </form>
                         </div>
                 

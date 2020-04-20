@@ -19,7 +19,7 @@ class LoginController extends Controller
 
     public function viewLogin()
     {                     
-    	return view('login.login'); 
+    	return view('auth.login'); 
     }
 
     public function loginPost(Request $request)
@@ -56,7 +56,5 @@ class LoginController extends Controller
             return redirect('login')->with('error','Username or Password are not Found');
         }
     }
-
-
 }
 

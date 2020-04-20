@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use \App\Users;
 
 class AdminController extends Controller
 {
@@ -22,6 +23,26 @@ class AdminController extends Controller
             }
     }
 }    
+
+    public function register(){
+
+        return view('admin.register');
+    }
+
+    public function registerPost(Request $request){
+
+        Users::create([
+            'nama' => $request->nama,
+            'username' => $request->username,
+            'password' => $request->password,
+            'id_outlet' => $request->id_outlet,
+            'role' => $request->role,
+        ]);
+
+        return redirect('login')->with('success', 'Ok, You have made an account');
+
+    }
+
 
     public function viewPelanggan()
     {
@@ -151,11 +172,11 @@ class AdminController extends Controller
 
         if ($status){
             
-            return redirect('admin/outlet/indexOutlet');
+            return redirect('admin/outlet/indexOutlet')->with('success', 'Yes, the member has been successfully added');
 
         } else {
 
-            return redirect('admin/outlet/tambahOutlet');
+            return redirect('admin/outlet/tambahOutlet')->with('error', 'Aw, there was some mistake perhaps');
 
         }
 
@@ -186,11 +207,11 @@ class AdminController extends Controller
 
         if ($status){
             
-            return redirect('admin/outlet/indexOutlet');
+            return redirect('admin/outlet/indexOutlet')->with('success', 'Yeah, outlet has been changed like her :)');
 
         } else {
 
-            return redirect('admin/outlet/editOutlet');
+            return redirect('admin/outlet/editOutlet')->with('error', 'Hey, outlet still the same bois');
 
         }
     }
@@ -202,7 +223,15 @@ class AdminController extends Controller
 
         $status = $data->delete();
 
-        return redirect('admin/outlet/indexOutlet');
+        if($status){
+
+            return redirect('admin/outlet/indexOutlet')->with('success', 'The data has been deleted');
+
+        }else{
+            return redirect('admin/outlet/indexOutlet')->with('error', 'The data has not been deleted yet :(');
+
+        }
+
 
             
     }
@@ -239,11 +268,11 @@ class AdminController extends Controller
 
         if ($status){
             
-            return redirect('admin/paket/indexPaket');
+            return redirect('admin/paket/indexPaket')->with('success', 'Welcome bois, packet has been added');
 
         } else {
 
-            return redirect('admin/paket/tambahPaket');
+            return redirect('admin/paket/tambahPaket')->with('error', 'Ew, did u do that carefully ?');
 
         }
     }
@@ -274,11 +303,11 @@ class AdminController extends Controller
 
         if ($status){
             
-            return redirect('admin/paket/indexPaket');
+            return redirect('admin/paket/indexPaket')->with('success', 'Oww, packet has been changed');
 
         } else {
 
-            return redirect('admin/paket/editPaket');
+            return redirect('admin/paket/editPaket')->with('error', 'No data has been changed');
 
         }
     }
@@ -289,7 +318,15 @@ class AdminController extends Controller
 
         $status = $data->delete(); 
         
-        return redirect('admin/paket/indexPaket');
+        if ($status) {
+
+            return redirect('admin/paket/indexPaket')->with('success', 'Packet has been deleted');
+        
+        }else{
+            return redirect('admin/paket/indexPaket')->with('error', 'Data has been deleted');
+    
+        }
+     
     }
 
     public function viewTransaksi()
@@ -343,11 +380,11 @@ class AdminController extends Controller
 
         if ($status){
             
-            return redirect('admin/transaksi/indexTransaksi');
+            return redirect('admin/transaksi/indexTransaksi')->with('success', 'Yes, new transaction has been added');
 
         } else {
 
-            return redirect('admin/transaksi/tambahTransaksi');
+            return redirect('admin/transaksi/tambahTransaksi')->with('error', 'Uh, no transaction has been added');
 
         }
     }
@@ -400,11 +437,11 @@ class AdminController extends Controller
 
         if ($status){
             
-            return redirect('admin/transaksi/indexTransaksi');
+            return redirect('admin/transaksi/indexTransaksi')->with('success', 'Data has been updated');
 
         } else {
 
-            return redirect('admin/transaksi/editTransaksi');
+            return redirect('admin/transaksi/editTransaksi')->wit('error', 'Data has not been updated yet');
 
         }
     }
@@ -415,7 +452,15 @@ class AdminController extends Controller
 
         $status = $data->delete();
 
-        return redirect('admin/transaksi/indexTransaksi');
+        if ($status) {
+
+            return redirect('admin/transaksi/indexTransaksi')->with('success', 'Data has been deleted');
+    
+        }else{
+            return redirect('admin/transaksi/indexTransaksi')->with('error', 'Data has not been deleted yet');
+    
+        }    
+    
     }
 
 }

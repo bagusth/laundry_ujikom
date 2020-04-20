@@ -34,7 +34,7 @@
 		<div card="card-body">
 			<div class= "container-fluid mt-2">
 				<div id= "container">
-                    <a href="{{url('admin/member/tambah_pelanggan')}}" class="btn btn-primary mb-4 mr-4" id="ih"><i class="material-icons">control_point</i>&nbsp;Tambah Pelanggan</a><br><br>
+                    <a href="{{url('admin/member/tambah_pelanggan')}}" class="btn btn-primary mb-4 mr-4" id="ih"><i class="fas fa-user-plus"></i>&nbsp;Tambah Pelanggan</a><br><br>
 						<table id=dtBasicExample class="table table-striped table-bordered " cellspacing="0" width="60%">
 								<thead class="thead-dark">
 									<tr>

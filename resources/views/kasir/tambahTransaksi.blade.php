@@ -1,8 +1,7 @@
-@extends('layout.app')
-
+@extends('layout.kasir')
 
 @section('content')
-
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- Cek -->
             @if ($errors->any())
@@ -22,7 +21,7 @@
                 }
            </style> 
 
-        <form action="{{url('admin/transaksi')}}" method="post">
+        <form action="{{url('kasir/transaksi')}}" method="post">
 
         @csrf
     
@@ -30,7 +29,7 @@
         <div class="card">
                 <div class="card-header">
                     <h1>Tambah Transaksi</h1>
-                    <a class="btn btn-secondary ml-2" href="{{url('admin/transaksi/indexTransaksi')}}" id="uh">Back</a>
+                    <a class="btn btn-secondary ml-2" href="{{url('kasir/transaksi/indexTransaksi')}}" id="uh">Back</a>
                 </div>
 
                 <div class="card-body">
