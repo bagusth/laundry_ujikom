@@ -94,25 +94,18 @@
                 <a href="{{url('admin/home')}}"><i class="fa fa-home"></i>&nbsp;Dashboard</a>
                 <a href="{{url('admin/member/index_member')}}"><i class="fa fa-user"></i>&nbsp;Registrasi Member</a>
                 <a href="{{url('admin/transaksi/indexTransaksi')}}"><i class="fa fa-credit-card"></i>&nbsp;Transaksi</a>
-                <a href="{{url('admin/outlet/indexOutlet')}}"><i class="fa fa-store"></i>&nbsp;Outlet</a>
+                <a href="{{url('admin/outlet/indexOutlet')}}"><i class="fas fa-store"></i>&nbsp;Outlet</a>
                 <a href="{{url('admin/paket/indexPaket')}}"><i class="fa fa-dropbox"></i>&nbsp;Paket/Produk</a><br><br><br><br>
                 <br><br><br><br><br><br><br><br><br><br>
                 <a href="{{url('logout')}}"><i class="fa fa-power-off"></i>&nbsp;Logout</a>   
             </div>
 
             <div id="main">
-                <button class="openbtn" onclick="openNav()">&#9776;</button>
-                    <div class="card-body">
-    
-                        <div class="container-fluid">
-        
-                            <div class="jumbotron bg-alt">
-                                @yield('header')
-                            </div>
-                        </div>
-                    </div>          
-
-                                  @yield('content')   
+                <button class="openbtn" onclick="openNav()">&#9776;</button>          
+                    <div class="container">
+                        @yield('content')
+                    </div>        
+                                     
             </div>        
             
         <script>

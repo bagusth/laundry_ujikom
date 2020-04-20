@@ -74,12 +74,11 @@
                             <label for="harga">Harga</label>
                             <input class="form-control" type="text" name="harga" id="harga">
                         </div>
+                    </div>   
+                    <div>
+                         @csrf
+                         <button class="btn btn-primary mt-2" type="submit">Submit</button>
                     </div>
-                    
-                <div>
-                @csrf
-                <button class="btn btn-primary mt-2" type="submit">Submit</button>
-                </div>
         </div>
                     
         </form>

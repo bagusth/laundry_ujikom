@@ -11,11 +11,6 @@
                 </div>
             @endif 
 
-@section('header')
-
-    <h1 id="wel" class="mt-2 ml-3 mb-4 display-5">Entry Transaction Page</h1>
-
-@endsection
 
     @section('content')
             <style>
@@ -24,7 +19,10 @@
                     margin-right:10px;
                     margin-bottom:5px;	
 				}
-			</style>	
+			</style>
+
+            
+            	
 		<div class="card-body">
 			<div class="list-item-group">
     	       <a href="{{url('kasir/transaksi/tambahTransaksi')}}" class="btn btn-primary mb-4 mr-3" id="ih"><i class="fas fa-cart-plus"></i>&nbsp;Tambah Transaksi</a>
@@ -34,7 +32,6 @@
 						<table id=dtBasicExample class="table table-striped table-bordered " cellspacing="0" width="60%">
 							<thead class="thead-dark">
 								<tr>
-									<th scope="th-sm">Id</th>
                                     <th scope="th-sm">Id Outlet</th>
 									<th scope="th-sm">Kode Invoice</th>
 									<th scope="th-sm">Id Member</th>
@@ -46,14 +43,12 @@
                                     <th scope="th-sm">Pajak</th>
                                     <th scope="th-sm">Status</th>
                                     <th scope="th-sm">Dibayar</th>
-                                    <th scope="th-sm">Id User</th>
                                     <th scope="th-sm">Action</th>
 								</tr>
 							</thead>
 							@foreach($transaksi as $row)
 							<tbody>
 								<tr>
-									<td>{{$row->id_transaksi}}</td>
                                     <td>{{$row->id_outlet}}</td>
                                     <td>{{$row->kode_invoice}}</td>
 									<td>{{$row->id_member}}</td>
@@ -65,7 +60,6 @@
                                     <td>{{$row->pajak}}</td>
                                     <td>{{$row->status}}</td>
                                     <td>{{$row->dibayar}}</td>
-                                    <td>{{$row->id_user}}</td>
 									<td>
 											<a class="badge badge-warning" href="{{url('kasir/transaksi/editTransaksi/'.$row->id_transaksi)}}"><i class="fa fa-edit"></i>&nbsp;Edit</a>
 

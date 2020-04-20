@@ -13,12 +13,6 @@
                 </div>
             @endif 
 
-@section('header')
-
-    <h1 id="wel" class="mt-2 ml-3 mb-4 display-5">Packet/Product Page</h1>
-
-@endsection
-
     @section('content')
             <style>
 				#ih{
@@ -27,6 +21,19 @@
                     margin-bottom:5px;	
 				}
 			</style>	
+
+		<head>
+			<div class="card-body">
+				<div class="container-fluid">
+					<div class="container">
+						<div class="jumbotron bg-alt">
+							<h1 id="wel" class="mt-2 mb-4 display-5">Packet/Product Page</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</head>	
+
 		<div class="card-body">
 			<div class="list-item-group">
     	       <a href="{{url('admin/paket/tambahPaket')}}" class="btn btn-primary mb-4 mr-3" id="ih"><i class="fa fa-boxes"></i>&nbsp;Tambah Paket </a>

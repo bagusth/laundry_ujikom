@@ -14,27 +14,33 @@
             @endif  
 
 
-@section('header')
-
-			<h1 id="wel" class="ml-3 mt-2 mb-4 display-5">Member Page</h1>
-
-@endsection            
-
 @section('content')
 
            <style>
                 #ih{
                     float: right;
-                    margin-right:10px;
                     margin-bottom:5px;
                 }
            </style> 
-		   
+
+	<head>
+	
+			<div class="card-body">
+				<div class="container-fluid">
+                	<div class="container">
+                    	 <div class="jumbotron bg-alt">
+							<h1 id="wel" class="mt-2 mb-4 display-5">Member Page</h1>
+                     	</div>
+                	</div>
+            	</div>
+			</div>
+	</head>	
+
 	<body>
 		<div card="card-body">
 			<div class= "container-fluid mt-2">
-				<div id= "container">
-                    <a href="{{url('admin/member/tambah_pelanggan')}}" class="btn btn-primary mb-4 mr-4" id="ih"><i class="fas fa-user-plus"></i>&nbsp;Tambah Pelanggan</a><br><br>
+				<div class= "container">
+                    <a href="{{url('admin/member/tambah_pelanggan')}}" class="btn btn-primary mb-4" id="ih"><i class="fas fa-user-plus"></i>&nbsp;Tambah Pelanggan</a><br><br>
 						<table id=dtBasicExample class="table table-striped table-bordered " cellspacing="0" width="60%">
 								<thead class="thead-dark">
 									<tr>

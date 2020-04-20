@@ -138,12 +138,11 @@
                                 </select>
                               </label>
                         </div>
+                    </div>  
+                    <div>
+                        @csrf
+                        <button class="btn btn-primary mt-2" type="submit">Submit</button>
                     </div>
-                    
-                <div>
-                @csrf
-                <button class="btn btn-primary mt-2" type="submit">Submit</button>
-                </div>
         </div>
                     
         </form>

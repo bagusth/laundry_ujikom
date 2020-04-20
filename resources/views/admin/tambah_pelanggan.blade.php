@@ -58,7 +58,6 @@
                               </label>
                         </div>
                     </div>
-                    <br> 
                     <div class="d-flex">
                         <div class="form-group">    
                             <label for="tlp">No. Telp</label>
@@ -68,7 +67,7 @@
                     
                 <div>
                 @csrf
-                <button class="btn btn-primary mt-2 ml-3" type="submit">Submit</button>
+                <button class="btn btn-primary mt-2" type="submit">Submit</button>
                 </div>
         </div>
                     
