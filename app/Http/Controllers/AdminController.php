@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use \App\Users;
+use \PDF;
 
 class AdminController extends Controller
 {
@@ -22,7 +23,17 @@ class AdminController extends Controller
         
             }
     }
-}    
+}
+
+
+    public function cetak_pdf()
+    {
+        $data['transaksi']= \App\Transaksi::get();
+
+        $pdf = PDF::loadview('admin.pdf', $data);
+        return $pdf->download('laporan-pelanggan');
+    }
+
 
     public function register(){
 

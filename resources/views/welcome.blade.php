@@ -78,7 +78,7 @@
                 text-align:center;
                 }
             .btn-alt{
-                background-color:#000;
+                background-color:#ff7c47;
             }    
 
         </style>

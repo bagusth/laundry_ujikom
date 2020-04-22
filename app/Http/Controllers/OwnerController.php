@@ -24,4 +24,13 @@ class OwnerController extends Controller
                 
         }
     }
+
+    public function cetak_pdf()
+    {
+        $data['transaksi']= \App\Transaksi::get();
+
+        $pdf = PDF::loadview('owner.pdf', $data);
+        return $pdf->download('laporan-pelanggan');
+    }
+
 }

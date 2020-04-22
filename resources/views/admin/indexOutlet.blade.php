@@ -38,7 +38,7 @@
 	</head>				
 		<div class="card-body">
 			<div class="list-item-group">
-    	       <a href="{{url('admin/outlet/tambahOutlet')}}" class="btn btn-primary mb-4 mr-3" id="ih"><i class="fas fa-plus-circle"></i>&nbsp;Tambah Outlet </a>
+    	       <a href="{{url('admin/outlet/tambahOutlet')}}" class="btn btn-primary mb-4 mr-3" id="ih"><i class="fas fa-plus-square"></i>&nbsp;Tambah Outlet </a>
             </div><br><br>	
 			<div class= "container-fluid mt-2">
 				<div id= "container">

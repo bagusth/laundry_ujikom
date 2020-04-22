@@ -29,6 +29,11 @@ Route::post('registerPost', 'AdminController@registerPost');
 //Admin
 Route::get('admin/home','AdminController@index');
 
+//Generate Laporan
+Route::get('admin/laporan/pdf', 'AdminController@cetak_pdf');
+Route::get('kasir/laporan/pdf', 'AdminController@cetak_pdf');
+Route::get('owner/laporan/pdf', 'AdminController@cetak_pdf');
+
 //Member
 Route::get('admin/member/index_member', 'AdminController@viewPelanggan');
 Route::get('admin/member/tambah_pelanggan','AdminController@viewTambahPelanggan');

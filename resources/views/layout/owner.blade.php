@@ -209,10 +209,7 @@
 
         <div id="mySidebar" class="sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="{{url('kasir/home')}}"><i class="fa fa-home"></i>&nbsp;Dashboard</a>
-            <a href="{{url('kasir/member/indexMember')}}"><i class="fa fa-user"></i>&nbsp;Registrasi Member</a>
-            <a href="{{url('kasir/transaksi/indexTransaksi')}}"><i class="fa fa-credit-card"></i>&nbsp;Transaksi</a>
-            <br><br><br><br><br><br><br><br><br><br>
+            <a href="{{url('owner/home')}}"><i class="fa fa-home"></i>&nbsp;Dashboard</a>
             <a href="{{url('logout')}}"><i class="fa fa-power-off"></i>&nbsp;Logout</a>   
         </div>
 

@@ -25,6 +25,16 @@ class kasirController extends Controller
         }
     }
 
+
+    public function cetak_pdf()
+    {
+        $data['transaksi']= \App\Transaksi::get();
+
+        $pdf = PDF::loadview('kasir.pdf', $data);
+        return $pdf->download('laporan-pelanggan');
+    }
+
+
     public function viewPelanggan()
     {
         $data['member']= \App\Member::get();
